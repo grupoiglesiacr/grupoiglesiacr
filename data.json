@@ -189,12 +189,12 @@
       "color": "rosa",
       "members": [
         "Oscar",
+        "Patri",
         "Gabriel",
+        "Eny",
         "Juan",
         "María",
-        "Rosemarie",
-        "Patri",
-        "Eny"
+        "Rosemarie"
       ],
       "proverbio": {
         "label": "Proverbios 30-31",
@@ -214,7 +214,7 @@
         "verseStart": 13,
         "verseEnd": null,
         "text": "",
-        "link": ""
+        "link": "https://www.bible.com/es/bible/149/JHN.3.13.RVR1960"
       }
     },
     {
@@ -287,5 +287,5 @@
     }
   ],
   "adminPw": "062d0706b58427a2c4c532416fe6fa1821e79ca4d1450718630b058ea2b7e196",
-  "__publishedAt": 1783299658844
+  "__publishedAt": 1783301226623
 }
