@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grupos de Vida</title>
+<meta name="description" content="Grupos de reflexión — Proverbios y Escrutinios de la semana">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9C%9D%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --parchment:#F7F1E3;
+  --parchment-d:#EEE3C8;
+  --parchment-line:#E3D6B4;
+  --violet-deep:#3B2451;
+  --violet:#5B3C74;
+  --violet-soft:#8C6AA6;
+  --violet-mist:#EFE7F3;
+  --gold:#C69A3E;
+  --gold-l:#E7C877;
+  --rose:#B65C6C;
+  --rose-mist:#F3E3E3;
+  --ink:#2B2033;
+  --ink-soft:#5E5266;
+  --paper:#FFFDF8;
+  --shadow:0 14px 34px -14px rgba(59,36,81,.28);
+  --shadow-sm:0 4px 14px -6px rgba(59,36,81,.22);
+  --radius:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Lora',serif;
+  background:var(--parchment);
+  color:var(--ink);
+  overflow-x:hidden;
+  min-height:100vh;
+  position:relative;
+}
+body::before{
+  content:"";
+  position:fixed;inset:0;
+  background:
+    radial-gradient(1100px 600px at 12% -10%, rgba(198,154,62,.14), transparent 60%),
+    radial-gradient(900px 700px at 105% 10%, rgba(91,60,116,.16), transparent 55%);
+  pointer-events:none;z-index:0;
+}
+h1,h2,h3,.display{font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--violet-deep)}
+.eyebrow{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600}
+a{color:inherit}
+img{max-width:100%;display:block}
+button{font-family:inherit;cursor:pointer}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+::selection{background:var(--gold-l);color:var(--violet-deep)}
+
+/* ── Cross ornament ── */
+.xmark{display:inline-block;position:relative;width:1em;height:1em}
+.xmark svg{width:100%;height:100%}
+
+/* ── Header ── */
+header{
+  position:sticky;top:0;z-index:40;
+  background:rgba(247,241,227,.86);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--parchment-line);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;gap:16px}
+.brand{display:flex;align-items:center;gap:12px;user-select:none}
+.brand-mark{
+  width:44px;height:44px;border-radius:50%;
+  background:linear-gradient(155deg,var(--violet) 0%,var(--violet-deep) 100%);
+  display:flex;align-items:center;justify-content:center;color:var(--gold-l);
+  font-size:1.3rem;box-shadow:var(--shadow-sm);flex:none;cursor:pointer;overflow:hidden;
+}
+.brand-mark img{width:100%;height:100%;object-fit:cover}
+.brand-txt h1{font-size:1.35rem;line-height:1.1}
+.brand-txt span{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--ink-soft);letter-spacing:.02em}
+.nav-meeting{
+  display:flex;align-items:center;gap:10px;
+  font-family:'Inter',sans-serif;font-size:.82rem;color:var(--violet-deep);
+  background:var(--paper);border:1px solid var(--parchment-line);
+  padding:8px 14px;border-radius:999px;box-shadow:var(--shadow-sm);
+}
+.nav-meeting strong{color:var(--gold);font-weight:700}
+@media(max-width:640px){.nav-meeting{display:none}}
+
+/* ── Hero ── */
+.hero{padding:56px 0 34px;text-align:center;position:relative}
+.hero-ribbon{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'Inter',sans-serif;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--violet-deep);background:var(--violet-mist);
+  padding:7px 16px;border-radius:999px;margin-bottom:20px;font-weight:600;
+}
+.hero-icon{
+  width:118px;height:118px;border-radius:50%;object-fit:cover;margin:0 auto 22px;
+  box-shadow:0 0 0 5px var(--paper),0 0 0 7px var(--gold),var(--shadow);
+  display:block;
+}
+.hero h2{font-size:clamp(2.1rem,4.6vw,3.4rem);line-height:1.08;margin-bottom:14px}
+.hero h2 em{font-style:italic;color:var(--gold)}
+.hero p.sub{font-family:'Lora',serif;font-style:italic;color:var(--ink-soft);max-width:560px;margin:0 auto 30px;font-size:1.05rem}
+
+.meeting-card{
+  max-width:640px;margin:0 auto;background:var(--paper);
+  border:1px solid var(--parchment-line);border-radius:var(--radius);
+  box-shadow:var(--shadow);padding:22px 28px;
+  display:flex;align-items:center;justify-content:center;gap:26px;flex-wrap:wrap;
+}
+.meeting-item{display:flex;flex-direction:column;align-items:center;gap:4px}
+.meeting-item .lbl{font-family:'Inter',sans-serif;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+.meeting-item .val{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:700;color:var(--violet-deep)}
+.meeting-divider{width:1px;height:34px;background:var(--parchment-line)}
+.meeting-note{font-family:'Inter',sans-serif;font-size:.78rem;color:var(--ink-soft);margin-top:14px;font-style:italic}
+
+/* ── Search ── */
+.search-row{max-width:420px;margin:30px auto 0;position:relative}
+.search-row input{
+  width:100%;padding:12px 18px 12px 42px;border-radius:999px;
+  border:1px solid var(--parchment-line);background:var(--paper);
+  font-family:'Inter',sans-serif;font-size:.9rem;color:var(--ink);
+  box-shadow:var(--shadow-sm);
+}
+.search-row input:focus{outline:2px solid var(--violet-soft);outline-offset:1px}
+.search-row .ic{position:absolute;left:16px;top:50%;transform:translateY(-50%);opacity:.5;font-size:.95rem}
+
+/* ── Groups ── */
+.groups-sec{padding:44px 0 90px}
+.groups-head{text-align:center;margin-bottom:34px}
+.groups-head h3{font-size:clamp(1.7rem,3vw,2.3rem)}
+.groups-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:22px;
+}
+.gcard{
+  background:var(--paper);border:1px solid var(--parchment-line);
+  border-radius:var(--radius);box-shadow:var(--shadow-sm);
+  padding:26px 22px 22px;position:relative;overflow:hidden;
+  transition:transform .25s ease,box-shadow .25s ease;
+  animation:riseIn .5s ease both;
+}
+.gcard:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+@keyframes riseIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.gcard .ribbon{
+  position:absolute;top:0;left:24px;width:26px;height:46px;
+  border-radius:0 0 6px 6px;
+}
+.gcard .ribbon::after{
+  content:"";position:absolute;left:0;bottom:-11px;border-width:11px 13px 0 13px;
+  border-style:solid;border-color:inherit;border-left-color:transparent!important;border-right-color:transparent!important;
+}
+.gc-violeta .ribbon{background:var(--violet);border-color:var(--violet)}
+.gc-oro .ribbon{background:var(--gold);border-color:var(--gold)}
+.gc-rosa .ribbon{background:var(--rose);border-color:var(--rose)}
+.gcard h4{font-size:1.55rem;margin:10px 0 4px 44px}
+.gcard .gcount{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--ink-soft);margin:0 0 16px 44px}
+.gmembers{list-style:none;display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px}
+.gmembers li{
+  font-family:'Inter',sans-serif;font-size:.76rem;color:var(--violet-deep);
+  background:var(--violet-mist);padding:5px 11px;border-radius:999px;
+}
+.gpassages{display:flex;flex-direction:column;gap:8px}
+.gpass-btn{
+  display:flex;align-items:center;justify-content:space-between;gap:8px;
+  width:100%;text-align:left;background:var(--parchment);border:1px solid var(--parchment-line);
+  border-radius:12px;padding:10px 14px;font-family:'Inter',sans-serif;font-size:.82rem;color:var(--ink);
+  transition:background .2s ease,border-color .2s ease;
+}
+.gpass-btn:hover{background:var(--parchment-d);border-color:var(--gold)}
+.gpass-btn .tag{font-weight:700;color:var(--violet-deep)}
+.gpass-btn .arrow{opacity:.5}
+
+.empty-state{
+  text-align:center;padding:60px 20px;color:var(--ink-soft);font-family:'Inter',sans-serif;
+}
+
+/* ── Modal (passage) ── */
+.overlay{
+  position:fixed;inset:0;background:rgba(43,32,51,.55);backdrop-filter:blur(3px);
+  display:none;align-items:center;justify-content:center;z-index:200;padding:20px;
+}
+.overlay.show{display:flex}
+.pmodal{
+  background:var(--paper);border-radius:22px;max-width:560px;width:100%;
+  max-height:86vh;overflow-y:auto;box-shadow:0 30px 60px -20px rgba(0,0,0,.4);
+  padding:32px 30px;position:relative;
+}
+.pmodal .close-x{
+  position:absolute;top:16px;right:16px;width:34px;height:34px;border-radius:50%;
+  border:1px solid var(--parchment-line);background:var(--parchment);
+  display:flex;align-items:center;justify-content:center;font-size:1rem;color:var(--ink-soft);
+}
+.pmodal .eyebrow{margin-bottom:8px}
+.pmodal h3{font-size:1.9rem;margin-bottom:4px}
+.pmodal .pgroup{font-family:'Inter',sans-serif;font-size:.8rem;color:var(--ink-soft);margin-bottom:18px}
+.pmodal .ptext{
+  font-family:'Lora',serif;font-size:1.08rem;line-height:1.85;color:var(--ink);
+  background:var(--parchment);border-left:3px solid var(--gold);
+  padding:16px 20px;border-radius:0 12px 12px 0;margin-bottom:18px;white-space:pre-wrap;
+}
+.pmodal .pempty{font-family:'Inter',sans-serif;font-size:.86rem;color:var(--ink-soft);font-style:italic;margin-bottom:18px}
+.pmodal .plink{
+  display:inline-flex;align-items:center;gap:8px;font-family:'Inter',sans-serif;font-size:.85rem;
+  font-weight:600;color:var(--violet-deep);text-decoration:none;border-bottom:1px solid var(--gold);
+  padding-bottom:2px;
+}
+.pmodal .pver{font-family:'Inter',sans-serif;font-size:.7rem;color:var(--ink-soft);margin-top:16px}
+
+/* ── Footer ── */
+footer{padding:38px 24px 26px;text-align:center;border-top:1px solid var(--parchment-line);margin-top:20px}
+footer p{font-family:'Inter',sans-serif;font-size:.78rem;color:var(--ink-soft)}
+.footer-icon{width:52px;height:68px;object-fit:cover;border-radius:6px;margin:0 auto 12px;box-shadow:var(--shadow-sm);display:block}
+.ft-admin-link{display:none}
+
+/* ── Toast ── */
+#toast{
+  position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);
+  background:var(--violet-deep);color:#fff;padding:12px 22px;border-radius:12px;
+  font-family:'Inter',sans-serif;font-size:.86rem;box-shadow:var(--shadow);
+  opacity:0;pointer-events:none;transition:all .3s ease;z-index:400;max-width:90vw;text-align:center;
+}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ══════════ ADMIN ══════════ */
+.a-overlay{position:fixed;inset:0;background:rgba(43,32,51,.6);backdrop-filter:blur(3px);display:none;align-items:center;justify-content:center;z-index:300;padding:16px}
+.a-overlay.show{display:flex}
+.a-login{background:var(--paper);border-radius:20px;max-width:360px;width:100%;padding:32px 28px;box-shadow:0 30px 60px -20px rgba(0,0,0,.4);text-align:center}
+.a-login h3{margin-bottom:6px}
+.a-login p{font-family:'Inter',sans-serif;font-size:.82rem;color:var(--ink-soft);margin-bottom:18px}
+.a-login input{width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--parchment-line);font-family:'Inter',sans-serif;font-size:.9rem;margin-bottom:12px}
+.btn{
+  font-family:'Inter',sans-serif;font-weight:600;font-size:.86rem;border:none;border-radius:10px;
+  padding:11px 20px;display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  transition:transform .15s ease,box-shadow .15s ease;
+}
+.btn-primary{background:var(--violet-deep);color:#fff}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:var(--shadow-sm)}
+.btn-gold{background:var(--gold);color:#2B2033}
+.btn-gold:hover{transform:translateY(-1px)}
+.btn-ghost{background:transparent;border:1px solid var(--parchment-line);color:var(--ink)}
+.btn-danger{background:var(--rose-mist);color:var(--rose)}
+.btn-block{width:100%}
+.btn-sm{padding:7px 12px;font-size:.76rem}
+.a-login-err{color:var(--rose);font-family:'Inter',sans-serif;font-size:.8rem;min-height:18px;margin-bottom:4px}
+
+.a-panel{
+  position:fixed;inset:0;background:var(--parchment);z-index:250;display:none;
+  overflow-y:auto;
+}
+.a-panel.show{display:block}
+.a-top{
+  position:sticky;top:0;z-index:5;background:rgba(247,241,227,.94);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--parchment-line);padding:16px 24px;
+  display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;
+}
+.a-top h2{font-size:1.35rem}
+.a-tabs{display:flex;gap:6px;flex-wrap:wrap}
+.a-tab{
+  font-family:'Inter',sans-serif;font-size:.82rem;font-weight:600;color:var(--ink-soft);
+  background:transparent;border:1px solid transparent;padding:9px 16px;border-radius:999px;
+}
+.a-tab.active{background:var(--violet-deep);color:#fff}
+.a-body{max-width:920px;margin:0 auto;padding:28px 24px 90px}
+.a-sect{display:none}
+.a-sect.active{display:block;animation:riseIn .3s ease}
+.a-card{background:var(--paper);border:1px solid var(--parchment-line);border-radius:16px;padding:22px 24px;margin-bottom:18px;box-shadow:var(--shadow-sm)}
+.a-card h4{font-size:1.15rem;margin-bottom:14px;color:var(--violet-deep)}
+.a-fld{margin-bottom:14px}
+.a-fld label{display:block;font-family:'Inter',sans-serif;font-size:.76rem;font-weight:600;color:var(--ink-soft);margin-bottom:6px}
+.a-fld input,.a-fld select,.a-fld textarea{
+  width:100%;padding:10px 13px;border-radius:9px;border:1px solid var(--parchment-line);
+  font-family:'Inter',sans-serif;font-size:.87rem;color:var(--ink);background:#fff;
+}
+.a-fld textarea{resize:vertical;min-height:70px;font-family:'Lora',serif}
+.a-row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.a-row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+@media(max-width:560px){.a-row2,.a-row3{grid-template-columns:1fr}}
+.a-hint{font-family:'Inter',sans-serif;font-size:.74rem;color:var(--ink-soft);margin-top:4px}
+
+.gedit-list{display:flex;flex-direction:column;gap:14px}
+.gedit{background:var(--paper);border:1px solid var(--parchment-line);border-radius:16px;padding:20px;box-shadow:var(--shadow-sm)}
+.gedit-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}
+.gedit-top input{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:700;color:var(--violet-deep);border:none;background:transparent;flex:1;min-width:0}
+.gedit-top input:focus{outline:none;border-bottom:1px solid var(--gold)}
+.chip-input{display:flex;flex-wrap:wrap;gap:7px;padding:8px;border:1px solid var(--parchment-line);border-radius:10px;background:#fff}
+.chip{
+  display:flex;align-items:center;gap:6px;background:var(--violet-mist);color:var(--violet-deep);
+  font-family:'Inter',sans-serif;font-size:.78rem;padding:5px 6px 5px 11px;border-radius:999px;
+}
+.chip button{background:none;border:none;color:var(--violet-deep);font-size:.8rem;opacity:.6;line-height:1;padding:2px}
+.chip-input input{border:none;flex:1;min-width:100px;font-family:'Inter',sans-serif;font-size:.82rem;padding:5px}
+.chip-input input:focus{outline:none}
+.passage-block{border:1px dashed var(--parchment-line);border-radius:12px;padding:14px;margin-top:12px}
+.passage-block h5{font-family:'Inter',sans-serif;font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);margin-bottom:10px;font-weight:700}
+.passage-status{font-family:'Inter',sans-serif;font-size:.74rem;color:var(--ink-soft);margin-top:8px}
+.color-dots{display:flex;gap:8px}
+.color-dot{width:26px;height:26px;border-radius:50%;border:2px solid transparent;cursor:pointer}
+.color-dot.violeta{background:var(--violet)}.color-dot.oro{background:var(--gold)}.color-dot.rosa{background:var(--rose)}
+.color-dot.sel{border-color:var(--ink)}
+
+.gh-status-dot{width:9px;height:9px;border-radius:50%;background:#ccc;display:inline-block;margin-right:6px}
+.gh-status-dot.ok{background:#2e9e5b}.gh-status-dot.err{background:var(--rose)}
+.gh-progress{height:6px;background:var(--parchment-d);border-radius:4px;overflow:hidden;margin-top:10px;display:none}
+.gh-progress-fill{height:100%;background:var(--gold);width:0%;transition:width .3s ease}
+.gh-note{background:var(--violet-mist);border-radius:10px;padding:12px 14px;font-family:'Inter',sans-serif;font-size:.8rem;color:var(--violet-deep);margin-bottom:14px}
+.gh-token-link{color:var(--gold);font-weight:700;text-decoration:underline;margin-left:6px}
+.pw-toggle{position:relative}
+.pw-toggle button{position:absolute;right:8px;top:50%;transform:translateY(-50%);background:none;border:none;font-size:.85rem;opacity:.6}
+.a-danger-zone{border:1px solid var(--rose);border-radius:16px;padding:20px;margin-top:24px}
+.a-danger-zone h4{color:var(--rose)}
+</style>
+</head>
+<body>
+
+<!-- ============ PUBLIC SITE ============ -->
+<header>
+  <div class="nav wrap">
+    <div class="brand">
+      <div class="brand-mark" id="logoClick" title="">
+        <img id="brandLogoImg" src="" alt="" style="display:none">
+        <span class="xmark" id="brandLogoFallback">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 2v20M4 8h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </span>
+      </div>
+      <div class="brand-txt">
+        <h1 id="churchName">Grupos de Vida</h1>
+        <span id="churchSubtitle">Comunidad parroquial · Palabra y Escrutinio</span>
+      </div>
+    </div>
+    <div class="nav-meeting">
+      <span>📅</span>
+      <span>Próxima reunión: <strong id="navMeetingDate">—</strong></span>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <img class="hero-icon" id="heroIconImg" src="" alt="" style="display:none">
+    <span class="hero-ribbon">✝ Encuentro semanal</span>
+    <h2>Cada grupo, <em>una Palabra</em><br>para meditar juntos</h2>
+    <p class="sub" id="heroSub">Encontrá tu grupo, revisá a tus compañeros y el pasaje asignado para el Proverbio y el Escrutinio de esta semana.</p>
+
+    <div class="meeting-card">
+      <div class="meeting-item">
+        <span class="lbl">Fecha</span>
+        <span class="val" id="mDate">—</span>
+      </div>
+      <div class="meeting-divider"></div>
+      <div class="meeting-item">
+        <span class="lbl">Hora</span>
+        <span class="val" id="mTime">—</span>
+      </div>
+      <div class="meeting-divider"></div>
+      <div class="meeting-item">
+        <span class="lbl">Lugar</span>
+        <span class="val" id="mPlace">—</span>
+      </div>
+    </div>
+    <p class="meeting-note" id="mNote"></p>
+
+    <div class="search-row">
+      <span class="ic">🔍</span>
+      <input type="text" id="searchInput" placeholder="Buscar mi nombre o grupo..." oninput="renderGroups()">
+    </div>
+  </div>
+</section>
+
+<section class="groups-sec">
+  <div class="wrap">
+    <div class="groups-head">
+      <span class="eyebrow">Esta semana</span>
+      <h3>Grupos y pasajes asignados</h3>
+    </div>
+    <div class="groups-grid" id="groupsGrid"></div>
+  </div>
+</section>
+
+<footer>
+  <img class="footer-icon" id="footerIconImg" src="" alt="" style="display:none">
+  <p>✝ Hecho con fe y con código · <a href="#" class="ft-admin-link" id="ftAdminLink" onclick="event.preventDefault();openAdminWithPassword()">Administración</a></p>
+</footer>
+
+<!-- Passage modal -->
+<div class="overlay" id="passageOverlay" onclick="if(event.target===this)closePassage()">
+  <div class="pmodal">
+    <button class="close-x" onclick="closePassage()">✕</button>
+    <span class="eyebrow" id="pmKind">Proverbio</span>
+    <h3 id="pmRef">—</h3>
+    <p class="pgroup" id="pmGroup"></p>
+    <div id="pmTextWrap"></div>
+    <a href="#" target="_blank" rel="noopener" class="plink" id="pmLink">Leer el pasaje completo ↗</a>
+    <p class="pver" id="pmVersion"></p>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<!-- ============ ADMIN LOGIN ============ -->
+<div class="a-overlay" id="loginOverlay">
+  <div class="a-login">
+    <h3>Acceso administrador</h3>
+    <p>Ingresá la contraseña para editar los grupos y la información de la reunión.</p>
+    <input type="password" id="loginPw" placeholder="Contraseña" onkeydown="if(event.key==='Enter')tryLogin()">
+    <p class="a-login-err" id="loginErr"></p>
+    <button class="btn btn-primary btn-block" onclick="tryLogin()">Entrar</button>
+    <button class="btn btn-ghost btn-block" style="margin-top:8px" onclick="closeLogin()">Cancelar</button>
+  </div>
+</div>
+
+<!-- ============ ADMIN PANEL ============ -->
+<div class="a-panel" id="adminPanel">
+  <div class="a-top">
+    <h2>✝ Panel de administración</h2>
+    <div class="a-tabs">
+      <button class="a-tab active" data-tab="info" onclick="showTab('info')">Reunión</button>
+      <button class="a-tab" data-tab="groups" onclick="showTab('groups')">Grupos</button>
+      <button class="a-tab" data-tab="publish" onclick="showTab('publish')">Publicar</button>
+      <button class="a-tab" data-tab="account" onclick="showTab('account')">Cuenta</button>
+    </div>
+    <div style="display:flex;gap:8px">
+      <button class="btn btn-ghost btn-sm" onclick="closeAdmin()">Ver sitio</button>
+    </div>
+  </div>
+
+  <div class="a-body">
+
+    <!-- TAB: INFO -->
+    <div class="a-sect active" id="tab-info">
+      <div class="a-card">
+        <h4>Datos de la comunidad</h4>
+        <div class="a-fld"><label>Nombre del grupo / comunidad</label><input id="i-name"></div>
+        <div class="a-fld"><label>Subtítulo</label><input id="i-subtitle"></div>
+        <div class="a-fld"><label>Texto introductorio (hero)</label><textarea id="i-hero"></textarea></div>
+        <div class="a-fld"><label>Logo (encabezado, circular)</label><input id="i-logoImg" placeholder="images/logo-sagrada-familia.jpg"></div>
+        <div class="a-fld"><label>Icono del hero</label><input id="i-heroImg" placeholder="images/cristo-icono.jpg"></div>
+        <div class="a-fld"><label>Icono del pie de página</label><input id="i-footerImg" placeholder="images/virgen-icono.jpg"></div>
+        <p class="a-hint">Podés usar una ruta dentro del sitio (ej. images/logo.jpg) o un enlace https:// a una imagen. Si subís el sitio a GitHub, recordá incluir la carpeta "images".</p>
+      </div>
+      <div class="a-card">
+        <h4>Próxima reunión</h4>
+        <div class="a-row3">
+          <div class="a-fld"><label>Fecha</label><input type="date" id="i-mdate"></div>
+          <div class="a-fld"><label>Hora</label><input type="time" id="i-mtime"></div>
+          <div class="a-fld"><label>Lugar</label><input id="i-mplace" placeholder="Salón parroquial"></div>
+        </div>
+        <div class="a-fld"><label>Nota para los grupos</label><input id="i-mnote" placeholder="Traer Biblia y libreta..."></div>
+      </div>
+      <button class="btn btn-primary" onclick="saveInfo()">Guardar cambios</button>
+    </div>
+
+    <!-- TAB: GROUPS -->
+    <div class="a-sect" id="tab-groups">
+      <div class="a-card" style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+        <div>
+          <h4 style="margin-bottom:2px">Grupos (<span id="groupCountLbl">0</span>)</h4>
+          <p class="a-hint">Agregá integrantes, y el pasaje del Proverbio y del Escrutinio de cada grupo.</p>
+        </div>
+        <button class="btn btn-gold" onclick="addGroup()">+ Nuevo grupo</button>
+      </div>
+      <div class="gedit-list" id="geditList"></div>
+    </div>
+
+    <!-- TAB: PUBLISH -->
+    <div class="a-sect" id="tab-publish">
+      <div class="a-card">
+        <h4>Guardar en este dispositivo</h4>
+        <p class="a-hint" style="margin-bottom:12px">Los cambios se guardan automáticamente en este navegador. Para que se vean en el sitio público, hay que publicarlos en GitHub.</p>
+        <button class="btn btn-ghost" onclick="downloadJson()">⬇ Descargar data.json</button>
+      </div>
+
+      <div class="a-card" id="ghConfigCard">
+        <h4>Conectar con GitHub Pages</h4>
+        <div class="gh-note" id="ghPublishNote">
+          💡 <strong>Primera vez:</strong> creá un token con permiso <code>repo</code> en GitHub.
+          <a href="https://github.com/settings/tokens/new?scopes=repo&description=GruposDeVida+Admin" target="_blank" rel="noopener" class="gh-token-link">Crear token aquí ↗</a>
+        </div>
+        <div class="a-row3">
+          <div class="a-fld"><label>Usuario de GitHub</label><input id="gh-user" placeholder="mi-usuario"></div>
+          <div class="a-fld"><label>Repositorio</label><input id="gh-repo" placeholder="gruposdevida.github.io"></div>
+          <div class="a-fld"><label>Rama</label><input id="gh-branch" placeholder="main" value="main"></div>
+        </div>
+        <div class="a-fld pw-toggle">
+          <label>Token de acceso personal</label>
+          <input id="gh-token" type="password" placeholder="ghp_... o github_pat_..." autocomplete="off">
+          <button type="button" onclick="toggleGhToken()">👁</button>
+        </div>
+        <button class="btn btn-primary" onclick="saveGhConfig()">Verificar y guardar</button>
+        <p id="ghConfigStatus" class="a-hint"></p>
+      </div>
+
+      <div class="a-card" id="ghPublishSection" style="display:none">
+        <h4>Publicar en GitHub</h4>
+        <p class="a-hint">Sitio: <a id="ghSiteLink" href="#" target="_blank" rel="noopener"></a></p>
+        <p class="a-hint" id="ghLastPublish"></p>
+        <div style="margin-top:14px"><span class="gh-status-dot" id="ghDot"></span><span id="ghStatusMsg" style="font-family:'Inter',sans-serif;font-size:.82rem;color:var(--ink-soft)">Listo para publicar</span></div>
+        <div class="gh-progress" id="ghProgressBar"><div class="gh-progress-fill" id="ghProgressFill"></div></div>
+        <p class="a-hint" id="ghProgressTxt"></p>
+        <button class="btn btn-gold" style="margin-top:14px" onclick="publishToGithub()">🚀 Publicar cambios</button>
+      </div>
+    </div>
+
+    <!-- TAB: ACCOUNT -->
+    <div class="a-sect" id="tab-account">
+      <div class="a-card">
+        <h4>Cambiar contraseña de administrador</h4>
+        <div class="a-fld"><label>Contraseña actual</label><input id="a-pwCurrent" type="password"></div>
+        <div class="a-fld"><label>Nueva contraseña</label><input id="a-pwNew" type="password"></div>
+        <div class="a-fld"><label>Confirmar nueva contraseña</label><input id="a-pwConfirm" type="password"></div>
+        <button class="btn btn-primary" onclick="changePassword()">Actualizar contraseña</button>
+      </div>
+      <div class="a-danger-zone">
+        <h4>Restablecer datos</h4>
+        <p class="a-hint" style="margin-bottom:12px">Borra los cambios guardados en este navegador y vuelve a los datos publicados en data.json.</p>
+        <button class="btn btn-danger" onclick="resetLocalData()">Restablecer datos locales</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+/* ═══════════════════════════════════════════════════
+   DATOS POR DEFECTO (se combinan con data.json remoto)
+   ═══════════════════════════════════════════════════ */
+const APP_VERSION = "1.0.0";
+const DEFAULT = {
+  church:{
+    name:"Grupos de Vida",
+    subtitle:"Camino Neocatecumenal · Palabra y Escrutinio",
+    logoImg:"images/logo-sagrada-familia.jpg",
+    heroImg:"images/cristo-icono.jpg",
+    footerImg:"images/virgen-icono.jpg",
+    meetingDate:"2026-07-12",
+    meetingTime:"18:00",
+    meetingPlace:"Salón parroquial",
+    meetingNote:"Traer Biblia y libreta. Puntualidad, por favor."
+  },
+  bible:{
+    version:"RVR1960",
+    versionLabel:"Reina-Valera 1960 (texto orientativo)",
+    note:"La búsqueda automática usa una versión de referencia general. Para uso litúrgico oficial, confirmen el pasaje con la Biblia aprobada por la Conferencia Episcopal."
+  },
+  groups:[],
+  adminPw:"062d0706b58427a2c4c532416fe6fa1821e79ca4d1450718630b058ea2b7e196"
+};
+
+/* ── Libro de la Biblia: nombre ES → nº estándar (para bolls.life) y código YouVersion ── */
+const BOOKS = [
+["Génesis",1,"GEN"],["Éxodo",2,"EXO"],["Levítico",3,"LEV"],["Números",4,"NUM"],["Deuteronomio",5,"DEU"],
+["Josué",6,"JOS"],["Jueces",7,"JDG"],["Rut",8,"RUT"],["1 Samuel",9,"1SA"],["2 Samuel",10,"2SA"],
+["1 Reyes",11,"1KI"],["2 Reyes",12,"2KI"],["1 Crónicas",13,"1CH"],["2 Crónicas",14,"2CH"],["Esdras",15,"EZR"],
+["Nehemías",16,"NEH"],["Ester",17,"EST"],["Job",18,"JOB"],["Salmos",19,"PSA"],["Proverbios",20,"PRO"],
+["Eclesiastés",21,"ECC"],["Cantares",22,"SNG"],["Isaías",23,"ISA"],["Jeremías",24,"JER"],["Lamentaciones",25,"LAM"],
+["Ezequiel",26,"EZK"],["Daniel",27,"DAN"],["Oseas",28,"HOS"],["Joel",29,"JOL"],["Amós",30,"AMO"],
+["Abdías",31,"OBA"],["Jonás",32,"JON"],["Miqueas",33,"MIC"],["Nahúm",34,"NAM"],["Habacuc",35,"HAB"],
+["Sofonías",36,"ZEP"],["Hageo",37,"HAG"],["Zacarías",38,"ZEC"],["Malaquías",39,"MAL"],["Mateo",40,"MAT"],
+["Marcos",41,"MRK"],["Lucas",42,"LUK"],["Juan",43,"JHN"],["Hechos",44,"ACT"],["Romanos",45,"ROM"],
+["1 Corintios",46,"1CO"],["2 Corintios",47,"2CO"],["Gálatas",48,"GAL"],["Efesios",49,"EPH"],["Filipenses",50,"PHP"],
+["Colosenses",51,"COL"],["1 Tesalonicenses",52,"1TH"],["2 Tesalonicenses",53,"2TH"],["1 Timoteo",54,"1TI"],["2 Timoteo",55,"2TI"],
+["Tito",56,"TIT"],["Filemón",57,"PHM"],["Hebreos",58,"HEB"],["Santiago",59,"JAS"],["1 Pedro",60,"1PE"],
+["2 Pedro",61,"2PE"],["1 Juan",62,"1JN"],["2 Juan",63,"2JN"],["3 Juan",64,"3JN"],["Judas",65,"JUD"],["Apocalipsis",66,"REV"]
+];
+function bookInfo(name){
+  if(!name)return null;
+  const n=name.trim().toLowerCase();
+  return BOOKS.find(b=>b[0].toLowerCase()===n)||null;
+}
+
+/* ═══════════════════════════════════════════════════
+   ESTADO
+   ═══════════════════════════════════════════════════ */
+let D=null;
+let editingId=null;
+
+function isHashed(s){return typeof s==="string"&&/^[a-f0-9]{64}$/i.test(s)}
+async function hashPw(pw){
+  const buf=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(pw.trim()));
+  return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,"0")).join("");
+}
+
+function loadLocal(){
+  try{return JSON.parse(localStorage.getItem("gv_data")||"null")}catch{return null}
+}
+function saveLocal(){
+  try{localStorage.setItem("gv_data",JSON.stringify(D));localStorage.setItem("gv_saved_at",Date.now())}catch(e){showToast("⚠️ No se pudo guardar en este dispositivo")}
+}
+
+async function initData(){
+  if(localStorage.getItem("gv_version")!==APP_VERSION){
+    localStorage.removeItem("gv_data");
+    localStorage.setItem("gv_version",APP_VERSION);
+  }
+  let remote=null;
+  try{
+    const res=await fetch("data.json?_="+Date.now());
+    if(res.ok)remote=await res.json();
+  }catch(e){}
+  const local=loadLocal();
+  // Si hay ediciones locales sin publicar en este navegador, esas mandan.
+  // Si no, se usa lo publicado en data.json (o los valores por defecto).
+  const base=(local&&local.__editedAt)?local:(remote||DEFAULT);
+  D=JSON.parse(JSON.stringify(base));
+  if(!Array.isArray(D.groups))D.groups=[];
+  if(!D.church)D.church=JSON.parse(JSON.stringify(DEFAULT.church));
+  if(!D.bible)D.bible=JSON.parse(JSON.stringify(DEFAULT.bible));
+  // La contraseña siempre se resuelve por separado: la local (si es un hash válido) gana sobre la remota.
+  if(local&&isHashed(local.adminPw))D.adminPw=local.adminPw;
+  if(!isHashed(D.adminPw))D.adminPw=DEFAULT.adminPw;
+  renderPublic();
+  populateAdminFields();
+  populateGhConfig();
+}
+
+/* ═══════════════════════════════════════════════════
+   RENDER PÚBLICO
+   ═══════════════════════════════════════════════════ */
+function fmtDateEs(iso){
+  if(!iso)return "—";
+  const [y,m,d]=iso.split("-").map(Number);
+  const dt=new Date(y,m-1,d);
+  return dt.toLocaleDateString("es-CR",{weekday:"long",day:"numeric",month:"long"});
+}
+function fmtTime(t){
+  if(!t)return "—";
+  const [h,mi]=t.split(":").map(Number);
+  const ap=h>=12?"pm":"am";
+  const h12=((h+11)%12)+1;
+  return `${h12}:${String(mi).padStart(2,"0")} ${ap}`;
+}
+
+function renderPublic(){
+  document.getElementById("churchName").textContent=D.church.name;
+  document.getElementById("churchSubtitle").textContent=D.church.subtitle;
+  document.getElementById("heroSub").textContent=D.church.heroText||"Encontrá tu grupo, revisá a tus compañeros y el pasaje asignado para el Proverbio y el Escrutinio de esta semana.";
+  document.getElementById("navMeetingDate").textContent=fmtDateEs(D.church.meetingDate);
+  document.getElementById("mDate").textContent=fmtDateEs(D.church.meetingDate);
+  document.getElementById("mTime").textContent=fmtTime(D.church.meetingTime);
+  document.getElementById("mPlace").textContent=D.church.meetingPlace||"—";
+  document.getElementById("mNote").textContent=D.church.meetingNote||"";
+  document.title=D.church.name;
+  setImg("brandLogoImg",D.church.logoImg,"brandLogoFallback");
+  setImg("heroIconImg",D.church.heroImg);
+  setImg("footerIconImg",D.church.footerImg);
+  renderGroups();
+}
+function setImg(imgId,src,fallbackId){
+  const img=document.getElementById(imgId);
+  if(!img)return;
+  if(src&&src.trim()){
+    img.src=src;img.style.display="block";
+    if(fallbackId)document.getElementById(fallbackId).style.display="none";
+  }else{
+    img.style.display="none";
+    if(fallbackId)document.getElementById(fallbackId).style.display="flex";
+  }
+}
+
+function renderGroups(){
+  const grid=document.getElementById("groupsGrid");
+  const q=(document.getElementById("searchInput")?.value||"").trim().toLowerCase();
+  let groups=D.groups||[];
+  if(q){
+    groups=groups.filter(g=>
+      g.name.toLowerCase().includes(q)||
+      (g.members||[]).some(m=>m.toLowerCase().includes(q))
+    );
+  }
+  if(!groups.length){
+    grid.innerHTML=`<div class="empty-state" style="grid-column:1/-1">No encontramos ningún grupo con ese nombre. 🙏</div>`;
+    return;
+  }
+  grid.innerHTML=groups.map(g=>{
+    const color=g.color||"violeta";
+    return `
+    <div class="gcard gc-${color}">
+      <div class="ribbon"></div>
+      <h4>${esc(g.name)}</h4>
+      <p class="gcount">${(g.members||[]).length} integrante${(g.members||[]).length===1?"":"s"}</p>
+      <ul class="gmembers">${(g.members||[]).map(m=>`<li>${esc(m)}</li>`).join("")}</ul>
+      <div class="gpassages">
+        ${g.proverbio&&g.proverbio.label?`<button class="gpass-btn" onclick="openPassage('${g.id}','proverbio')"><span><span class="tag">Proverbio</span> · ${esc(g.proverbio.label)}</span><span class="arrow">→</span></button>`:""}
+        ${g.escrutinio&&g.escrutinio.label?`<button class="gpass-btn" onclick="openPassage('${g.id}','escrutinio')"><span><span class="tag">Escrutinio</span> · ${esc(g.escrutinio.label)}</span><span class="arrow">→</span></button>`:""}
+      </div>
+    </div>`;
+  }).join("");
+}
+function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+
+/* ── Modal de pasaje ── */
+function openPassage(groupId,kind){
+  const g=D.groups.find(x=>x.id===groupId);
+  if(!g)return;
+  const p=g[kind];
+  document.getElementById("pmKind").textContent=kind==="proverbio"?"Proverbio":"Escrutinio";
+  document.getElementById("pmRef").textContent=p.label||"—";
+  document.getElementById("pmGroup").textContent=g.name;
+  const wrap=document.getElementById("pmTextWrap");
+  if(p.text&&p.text.trim()){
+    wrap.innerHTML=`<div class="ptext">${esc(p.text)}</div>`;
+  }else{
+    wrap.innerHTML=`<p class="pempty">El texto completo todavía no fue cargado por el administrador. Podés leerlo en el enlace de abajo.</p>`;
+  }
+  const linkEl=document.getElementById("pmLink");
+  if(p.link){linkEl.href=p.link;linkEl.style.display="inline-flex"}else{linkEl.style.display="none"}
+  document.getElementById("pmVersion").textContent=D.bible?.versionLabel||"";
+  document.getElementById("passageOverlay").classList.add("show");
+}
+function closePassage(){document.getElementById("passageOverlay").classList.remove("show")}
+
+/* ── Toast ── */
+let _toastT=null;
+function showToast(msg){
+  const t=document.getElementById("toast");
+  t.textContent=msg;t.classList.add("show");
+  clearTimeout(_toastT);
+  _toastT=setTimeout(()=>t.classList.remove("show"),3200);
+}
+
+/* ═══════════════════════════════════════════════════
+   LOGIN ADMIN (clic 5 veces en el logo)
+   ═══════════════════════════════════════════════════ */
+let _logoClicks=0,_logoTimer=null;
+document.getElementById("logoClick").addEventListener("click",()=>{
+  _logoClicks++;
+  clearTimeout(_logoTimer);
+  if(_logoClicks>=5){_logoClicks=0;openAdminWithPassword();return}
+  _logoTimer=setTimeout(()=>{_logoClicks=0},1800);
+});
+function openAdminWithPassword(){
+  document.getElementById("loginPw").value="";
+  document.getElementById("loginErr").textContent="";
+  document.getElementById("loginOverlay").classList.add("show");
+  setTimeout(()=>document.getElementById("loginPw").focus(),50);
+}
+function closeLogin(){document.getElementById("loginOverlay").classList.remove("show")}
+async function tryLogin(){
+  const pw=document.getElementById("loginPw").value;
+  const hash=await hashPw(pw);
+  const stored=isHashed(D.adminPw)?D.adminPw:DEFAULT.adminPw;
+  if(hash===stored){
+    closeLogin();
+    openAdmin();
+  }else{
+    document.getElementById("loginErr").textContent="Contraseña incorrecta.";
+  }
+}
+function openAdmin(){
+  document.getElementById("adminPanel").classList.add("show");
+  populateAdminFields();
+  renderGroupEditors();
+}
+function closeAdmin(){document.getElementById("adminPanel").classList.remove("show")}
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){closePassage();closeLogin();closeAdmin()}});
+
+function showTab(name){
+  document.querySelectorAll(".a-tab").forEach(b=>b.classList.toggle("active",b.dataset.tab===name));
+  document.querySelectorAll(".a-sect").forEach(s=>s.classList.toggle("active",s.id==="tab-"+name));
+}
+
+/* ═══════════════════════════════════════════════════
+   ADMIN — INFO
+   ═══════════════════════════════════════════════════ */
+function populateAdminFields(){
+  if(!D)return;
+  document.getElementById("i-name").value=D.church.name||"";
+  document.getElementById("i-subtitle").value=D.church.subtitle||"";
+  document.getElementById("i-hero").value=D.church.heroText||"";
+  document.getElementById("i-logoImg").value=D.church.logoImg||"";
+  document.getElementById("i-heroImg").value=D.church.heroImg||"";
+  document.getElementById("i-footerImg").value=D.church.footerImg||"";
+  document.getElementById("i-mdate").value=D.church.meetingDate||"";
+  document.getElementById("i-mtime").value=D.church.meetingTime||"";
+  document.getElementById("i-mplace").value=D.church.meetingPlace||"";
+  document.getElementById("i-mnote").value=D.church.meetingNote||"";
+}
+function saveInfo(){
+  D.church.name=document.getElementById("i-name").value.trim()||DEFAULT.church.name;
+  D.church.subtitle=document.getElementById("i-subtitle").value.trim();
+  D.church.heroText=document.getElementById("i-hero").value.trim();
+  D.church.logoImg=document.getElementById("i-logoImg").value.trim();
+  D.church.heroImg=document.getElementById("i-heroImg").value.trim();
+  D.church.footerImg=document.getElementById("i-footerImg").value.trim();
+  D.church.meetingDate=document.getElementById("i-mdate").value;
+  D.church.meetingTime=document.getElementById("i-mtime").value;
+  D.church.meetingPlace=document.getElementById("i-mplace").value.trim();
+  D.church.meetingNote=document.getElementById("i-mnote").value.trim();
+  persistAndRender();
+  showToast("✅ Información guardada");
+}
+
+/* ═══════════════════════════════════════════════════
+   ADMIN — GRUPOS
+   ═══════════════════════════════════════════════════ */
+function uid(){return "g"+Math.random().toString(36).slice(2,9)}
+function blankPassage(){return {label:"",book:"",chapterStart:null,chapterEnd:null,verseStart:null,verseEnd:null,text:"",link:""}}
+function addGroup(){
+  D.groups.push({
+    id:uid(),
+    name:"Grupo "+(D.groups.length+1),
+    color:["violeta","oro","rosa"][D.groups.length%3],
+    members:[],
+    proverbio:blankPassage(),
+    escrutinio:blankPassage()
+  });
+  persistAndRender();
+  renderGroupEditors();
+  showToast("➕ Grupo agregado");
+}
+function removeGroup(id){
+  if(!confirm("¿Eliminar este grupo? Esta acción no se puede deshacer."))return;
+  D.groups=D.groups.filter(g=>g.id!==id);
+  persistAndRender();
+  renderGroupEditors();
+}
+function updateGroupField(id,field,value){
+  const g=D.groups.find(x=>x.id===id);if(!g)return;
+  g[field]=value;
+  persistAndRender();
+}
+function setGroupColor(id,color){
+  const g=D.groups.find(x=>x.id===id);if(!g)return;
+  g.color=color;
+  persistAndRender();
+  renderGroupEditors();
+}
+function addMember(id,name){
+  name=(name||"").trim();if(!name)return;
+  const g=D.groups.find(x=>x.id===id);if(!g)return;
+  g.members=g.members||[];
+  g.members.push(name);
+  persistAndRender();
+  renderGroupEditors();
+}
+function removeMember(id,idx){
+  const g=D.groups.find(x=>x.id===id);if(!g)return;
+  g.members.splice(idx,1);
+  persistAndRender();
+  renderGroupEditors();
+}
+function updatePassageField(id,kind,field,value){
+  const g=D.groups.find(x=>x.id===id);if(!g)return;
+  g[kind][field]=value;
+  persistAndRender();
+}
+
+function renderGroupEditors(){
+  document.getElementById("groupCountLbl").textContent=D.groups.length;
+  const wrap=document.getElementById("geditList");
+  if(!D.groups.length){
+    wrap.innerHTML=`<div class="empty-state">Todavía no hay grupos. Creá el primero con "+ Nuevo grupo".</div>`;
+    return;
+  }
+  wrap.innerHTML=D.groups.map(g=>{
+    return `
+    <div class="gedit" data-id="${g.id}">
+      <div class="gedit-top">
+        <span class="color-dots">
+          ${["violeta","oro","rosa"].map(c=>`<span class="color-dot ${c} ${g.color===c?'sel':''}" onclick="setGroupColor('${g.id}','${c}')"></span>`).join("")}
+        </span>
+        <input value="${esc(g.name)}" onchange="updateGroupField('${g.id}','name',this.value)">
+        <button class="btn btn-danger btn-sm" onclick="removeGroup('${g.id}')">Eliminar</button>
+      </div>
+
+      <div class="a-fld">
+        <label>Integrantes</label>
+        <div class="chip-input" id="chips-${g.id}">
+          ${(g.members||[]).map((m,i)=>`<span class="chip">${esc(m)}<button onclick="removeMember('${g.id}',${i})">✕</button></span>`).join("")}
+          <input type="text" placeholder="Agregar nombre y Enter..." onkeydown="if(event.key==='Enter'){event.preventDefault();addMember('${g.id}',this.value);this.value=''}">
+        </div>
+      </div>
+
+      ${passageBlockHtml(g,"proverbio","Proverbio")}
+      ${passageBlockHtml(g,"escrutinio","Escrutinio")}
+    </div>`;
+  }).join("");
+}
+
+function passageBlockHtml(g,kind,title){
+  const p=g[kind]||blankPassage();
+  return `
+  <div class="passage-block">
+    <h5>${title}</h5>
+    <div class="a-row3">
+      <div class="a-fld"><label>Libro</label>
+        <select onchange="updatePassageField('${g.id}','${kind}','book',this.value)">
+          <option value="">— Elegir —</option>
+          ${BOOKS.map(b=>`<option value="${b[0]}" ${p.book===b[0]?"selected":""}>${b[0]}</option>`).join("")}
+        </select>
+      </div>
+      <div class="a-fld"><label>Capítulo(s)</label>
+        <input placeholder="ej. 30 o 30-31" value="${esc(chapterRangeStr(p))}" onchange="applyChapterRange('${g.id}','${kind}',this.value)">
+      </div>
+      <div class="a-fld"><label>Versículo(s) <span style="font-weight:400;text-transform:none">(opcional)</span></label>
+        <input placeholder="ej. 13 o 13-17" value="${esc(verseRangeStr(p))}" onchange="applyVerseRange('${g.id}','${kind}',this.value)">
+      </div>
+    </div>
+    <div class="a-fld"><label>Referencia mostrada</label>
+      <input value="${esc(p.label)}" onchange="updatePassageField('${g.id}','${kind}','label',this.value)" placeholder="ej. Proverbios 30-31">
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin:6px 0 10px">
+      <button class="btn btn-gold btn-sm" onclick="autoFillPassage('${g.id}','${kind}')">✨ Buscar automáticamente</button>
+      <button class="btn btn-ghost btn-sm" onclick="clearPassageText('${g.id}','${kind}')">Limpiar texto</button>
+    </div>
+    <div class="a-fld"><label>Texto del pasaje (manual o autocompletado)</label>
+      <textarea onchange="updatePassageField('${g.id}','${kind}','text',this.value)" placeholder="Podés pegar el texto manualmente si la búsqueda automática no aplica...">${esc(p.text)}</textarea>
+    </div>
+    <div class="a-fld"><label>Enlace para leer completo</label>
+      <input onchange="updatePassageField('${g.id}','${kind}','link',this.value)" value="${esc(p.link)}" placeholder="Se genera automáticamente al buscar">
+    </div>
+    <p class="passage-status" id="status-${g.id}-${kind}"></p>
+  </div>`;
+}
+function chapterRangeStr(p){
+  if(!p.chapterStart)return "";
+  return p.chapterEnd&&p.chapterEnd!==p.chapterStart?`${p.chapterStart}-${p.chapterEnd}`:`${p.chapterStart}`;
+}
+function verseRangeStr(p){
+  if(!p.verseStart)return "";
+  return p.verseEnd&&p.verseEnd!==p.verseStart?`${p.verseStart}-${p.verseEnd}`:`${p.verseStart}`;
+}
+function applyChapterRange(id,kind,val){
+  const g=D.groups.find(x=>x.id===id);if(!g)return;
+  const m=val.trim().match(/^(\d+)\s*-?\s*(\d+)?$/);
+  if(m){g[kind].chapterStart=parseInt(m[1]);g[kind].chapterEnd=m[2]?parseInt(m[2]):parseInt(m[1])}
+  else if(!val.trim()){g[kind].chapterStart=null;g[kind].chapterEnd=null}
+  persistAndRender();
+}
+function applyVerseRange(id,kind,val){
+  const g=D.groups.find(x=>x.id===id);if(!g)return;
+  const m=val.trim().match(/^(\d+)\s*-?\s*(\d+)?$/);
+  if(m){g[kind].verseStart=parseInt(m[1]);g[kind].verseEnd=m[2]?parseInt(m[2]):parseInt(m[1])}
+  else if(!val.trim()){g[kind].verseStart=null;g[kind].verseEnd=null}
+  persistAndRender();
+}
+function clearPassageText(id,kind){
+  const g=D.groups.find(x=>x.id===id);if(!g)return;
+  g[kind].text="";
+  persistAndRender();
+  renderGroupEditors();
+}
+
+/* ── Búsqueda automática: genera enlace siempre; intenta traer el texto ── */
+function buildLink(book,chStart,chEnd,vStart,vEnd){
+  const info=bookInfo(book);
+  if(!info)return "";
+  const code=info[2];
+  let ref=`${code}.${chStart}`;
+  if(vStart)ref+=`.${vStart}`;
+  return `https://www.bible.com/es/bible/149/${ref}.RVR1960`;
+}
+async function autoFillPassage(id,kind){
+  const g=D.groups.find(x=>x.id===id);if(!g)return;
+  const p=g[kind];
+  const statusEl=document.getElementById(`status-${id}-${kind}`);
+  if(!p.book||!p.chapterStart){
+    if(statusEl)statusEl.textContent="⚠️ Elegí primero el libro y el capítulo.";
+    return;
+  }
+  const info=bookInfo(p.book);
+  if(!info){if(statusEl)statusEl.textContent="⚠️ Libro no reconocido.";return}
+  if(!p.label)p.label=`${p.book} ${chapterRangeStr(p)}${p.verseStart?":"+verseRangeStr(p):""}`;
+  p.link=buildLink(p.book,p.chapterStart,p.chapterEnd,p.verseStart,p.verseEnd);
+  if(statusEl)statusEl.textContent="🔎 Buscando el texto...";
+  try{
+    const chapters=[];
+    for(let c=p.chapterStart;c<=(p.chapterEnd||p.chapterStart);c++)chapters.push(c);
+    let fullText="";
+    for(const ch of chapters){
+      const res=await fetch(`https://bolls.life/get-text/${D.bible?.version||"RVR1960"}/${info[1]}/${ch}/`);
+      if(!res.ok)throw new Error("no-ok");
+      const verses=await res.json();
+      let vs=verses;
+      if(chapters.length===1&&p.verseStart){
+        vs=verses.filter(v=>v.verse>=p.verseStart&&v.verse<=(p.verseEnd||p.verseStart));
+      }
+      fullText+=(fullText?"\n\n":"")+vs.map(v=>`${v.verse}. ${v.text.replace(/<[^>]+>/g,"")}`).join(" ");
+    }
+    if(fullText.trim()){
+      p.text=fullText.trim();
+      if(statusEl)statusEl.textContent="✅ Texto encontrado automáticamente.";
+    }else{
+      if(statusEl)statusEl.textContent="⚠️ No se encontró texto; el enlace sí se generó. Podés pegarlo manualmente.";
+    }
+  }catch(e){
+    if(statusEl)statusEl.textContent="⚠️ No se pudo buscar el texto automáticamente (revisá tu conexión). El enlace sí quedó generado — podés pegar el texto manualmente.";
+  }
+  persistAndRender();
+  renderGroupEditors();
+}
+
+/* ═══════════════════════════════════════════════════
+   PERSISTENCIA LOCAL + RENDER
+   ═══════════════════════════════════════════════════ */
+function persistAndRender(){
+  D.__editedAt=Date.now();
+  saveLocal();
+  renderPublic();
+}
+
+function downloadJson(){
+  const copy=JSON.parse(JSON.stringify(D));
+  delete copy.__editedAt;
+  const blob=new Blob([JSON.stringify(copy,null,2)],{type:"application/json"});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement("a");
+  a.href=url;a.download="data.json";a.click();
+  URL.revokeObjectURL(url);
+}
+
+function resetLocalData(){
+  if(!confirm("Esto borra los cambios guardados en este navegador y vuelve a los datos publicados. ¿Continuar?"))return;
+  localStorage.removeItem("gv_data");
+  location.reload();
+}
+
+/* ═══════════════════════════════════════════════════
+   CONTRASEÑA
+   ═══════════════════════════════════════════════════ */
+async function changePassword(){
+  const cur=document.getElementById("a-pwCurrent").value;
+  const nw=document.getElementById("a-pwNew").value;
+  const cf=document.getElementById("a-pwConfirm").value;
+  const storedHash=isHashed(D.adminPw)?D.adminPw:DEFAULT.adminPw;
+  if((await hashPw(cur))!==storedHash){showToast("❌ La contraseña actual no coincide");return}
+  if(nw.length<4){showToast("⚠️ La nueva contraseña debe tener al menos 4 caracteres");return}
+  if(nw!==cf){showToast("⚠️ Las contraseñas nuevas no coinciden");return}
+  D.adminPw=await hashPw(nw);
+  saveLocal();
+  document.getElementById("a-pwCurrent").value="";
+  document.getElementById("a-pwNew").value="";
+  document.getElementById("a-pwConfirm").value="";
+  showToast("✅ Contraseña actualizada");
+}
+
+/* ═══════════════════════════════════════════════════
+   GITHUB API PUBLISH  (Git Data API — sin límite de 1MB)
+   ═══════════════════════════════════════════════════ */
+function loadGhConfig(){try{return JSON.parse(localStorage.getItem("gv_gh")||"{}")}catch{return {}}}
+function readGhConfigFromDOM(){
+  return {
+    user:document.getElementById("gh-user")?.value.trim()||"",
+    repo:document.getElementById("gh-repo")?.value.trim()||"",
+    branch:document.getElementById("gh-branch")?.value.trim()||"main",
+    token:document.getElementById("gh-token")?.value.trim()||""
+  };
+}
+function toggleGhToken(){
+  const inp=document.getElementById("gh-token");
+  inp.type=inp.type==="password"?"text":"password";
+}
+function updateSiteLink(cfg){
+  const sl=document.getElementById("ghSiteLink");if(!sl)return;
+  const url=`https://${cfg.user}.github.io${cfg.repo!==cfg.user+".github.io"?"/"+cfg.repo:""}`;
+  sl.href=url;sl.textContent=url.replace("https://","")+" ↗";
+}
+function populateGhConfig(){
+  const cfg=loadGhConfig();
+  if(cfg.user)document.getElementById("gh-user").value=cfg.user;
+  if(cfg.repo)document.getElementById("gh-repo").value=cfg.repo;
+  if(cfg.branch)document.getElementById("gh-branch").value=cfg.branch;
+  if(cfg.token)document.getElementById("gh-token").value=cfg.token;
+  if(!cfg.user&&!cfg.token)return;
+  if(cfg.user&&cfg.repo&&cfg.token){
+    document.getElementById("ghPublishNote").style.display="none";
+    document.getElementById("ghPublishSection").style.display="block";
+    updateSiteLink(cfg);
+    const last=localStorage.getItem("gv_gh_last");
+    if(last)document.getElementById("ghLastPublish").textContent=`Última publicación: ${last}`;
+  }
+}
+function setGhStatus(state,msg,pct){
+  const dot=document.getElementById("ghDot"),txt=document.getElementById("ghStatusMsg");
+  const bar=document.getElementById("ghProgressBar"),fill=document.getElementById("ghProgressFill");
+  const ptxt=document.getElementById("ghProgressTxt");
+  if(dot)dot.className="gh-status-dot"+(state?" "+state:"");
+  if(txt)txt.textContent=msg||"";
+  if(pct!==undefined&&bar&&fill){
+    bar.style.display="block";fill.style.width=pct+"%";
+    if(ptxt)ptxt.textContent=pct<100?`${pct}%`:"✅ Completado";
+  }else if(pct===undefined&&bar){bar.style.display="none"}
+}
+async function saveGhConfig(){
+  const cfg=readGhConfigFromDOM();
+  if(!cfg.user||!cfg.repo||!cfg.token){
+    document.getElementById("ghConfigStatus").textContent="⚠️ Usuario, repositorio y token son obligatorios";
+    document.getElementById("ghConfigStatus").style.color="var(--rose)";
+    return;
+  }
+  if(!cfg.branch)cfg.branch="main";
+  localStorage.setItem("gv_gh",JSON.stringify(cfg));
+  const status=document.getElementById("ghConfigStatus");
+  status.textContent="✅ Configuración guardada en este dispositivo";
+  status.style.color="#2e9e5b";
+  document.getElementById("ghPublishNote").style.display="none";
+  document.getElementById("ghPublishSection").style.display="block";
+  setGhStatus("","Listo para publicar");
+  updateSiteLink(cfg);
+  showToast("✅ Configuración de GitHub guardada");
+}
+
+async function ghPushFile(cfg,filePath,content,onProgress=null){
+  const h={Authorization:`Bearer ${cfg.token}`,"Accept":"application/vnd.github+json","Content-Type":"application/json"};
+  const base=`https://api.github.com/repos/${cfg.user}/${cfg.repo}`;
+  const prog=(pct,msg)=>{if(onProgress)onProgress(pct,msg)};
+
+  prog(15,"Leyendo rama...");
+  const refRes=await fetch(`${base}/git/ref/heads/${cfg.branch}`,{headers:h});
+  if(refRes.status===401)throw new Error("Token sin permisos de escritura. Token clásico (ghp_): necesita scope 'repo'. Token fine-grained (github_pat_): necesita permiso 'Contents → Read and Write'.");
+  if(refRes.status===404)throw new Error(`Rama "${cfg.branch}" no encontrada. Revisá el nombre de la rama.`);
+  if(!refRes.ok){const e=await refRes.json().catch(()=>({}));throw new Error(`Error ${refRes.status} al leer la rama: ${e.message||""}`)}
+  const refData=await refRes.json();
+  const latestCommitSha=refData.object.sha;
+
+  prog(28,"Leyendo estado actual...");
+  const commitRes=await fetch(`${base}/git/commits/${latestCommitSha}`,{headers:h});
+  if(!commitRes.ok)throw new Error(`Error ${commitRes.status} al leer el commit`);
+  const commitData=await commitRes.json();
+  const baseTreeSha=commitData.tree.sha;
+
+  prog(45,"Subiendo archivo...");
+  const encoded=btoa(Array.from(new TextEncoder().encode(content),b=>String.fromCharCode(b)).join(""));
+  const blobRes=await fetch(`${base}/git/blobs`,{method:"POST",headers:h,body:JSON.stringify({content:encoded,encoding:"base64"})});
+  if(blobRes.status===413)throw new Error("Archivo demasiado grande para GitHub.");
+  if(!blobRes.ok){const e=await blobRes.json().catch(()=>({}));throw new Error(`Error ${blobRes.status} al crear blob: ${e.message||""}`)}
+  const blobData=await blobRes.json();
+
+  prog(60,"Preparando árbol de archivos...");
+  const treeRes=await fetch(`${base}/git/trees`,{method:"POST",headers:h,body:JSON.stringify({base_tree:baseTreeSha,tree:[{path:filePath,mode:"100644",type:"blob",sha:blobData.sha}]})});
+  if(!treeRes.ok){const e=await treeRes.json().catch(()=>({}));throw new Error(`Error ${treeRes.status} al crear árbol: ${e.message||""}`)}
+  const treeData=await treeRes.json();
+
+  prog(78,"Creando commit...");
+  const commitMsg=`Actualizar ${filePath} desde el panel de administración`;
+  const newCommitRes=await fetch(`${base}/git/commits`,{method:"POST",headers:h,body:JSON.stringify({message:commitMsg,tree:treeData.sha,parents:[latestCommitSha]})});
+  if(!newCommitRes.ok){const e=await newCommitRes.json().catch(()=>({}));throw new Error(`Error ${newCommitRes.status} al crear commit: ${e.message||""}`)}
+  const newCommitData=await newCommitRes.json();
+
+  prog(92,"Actualizando rama...");
+  const updateRefRes=await fetch(`${base}/git/refs/heads/${cfg.branch}`,{method:"PATCH",headers:h,body:JSON.stringify({sha:newCommitData.sha})});
+  if(!updateRefRes.ok){const e=await updateRefRes.json().catch(()=>({}));throw new Error(`Error ${updateRefRes.status} al actualizar la rama: ${e.message||""}`)}
+
+  prog(100,"Publicado");
+  return true;
+}
+
+async function publishToGithub(){
+  const cfg=loadGhConfig();
+  if(!cfg.user||!cfg.repo||!cfg.token){showToast("⚠️ Configurá GitHub primero");return}
+  const copy=JSON.parse(JSON.stringify(D));
+  delete copy.__editedAt;
+  copy.__publishedAt=Date.now();
+  setGhStatus("","Publicando...",5);
+  try{
+    await ghPushFile(cfg,"data.json",JSON.stringify(copy,null,2),(pct,msg)=>setGhStatus("",msg,pct));
+    setGhStatus("ok","✅ Publicado correctamente",100);
+    const now=new Date().toLocaleString("es-CR");
+    localStorage.setItem("gv_gh_last",now);
+    document.getElementById("ghLastPublish").textContent=`Última publicación: ${now}`;
+    showToast("🚀 Sitio publicado en GitHub");
+  }catch(e){
+    setGhStatus("err",e.message||"Error al publicar");
+    showToast("❌ "+(e.message||"Error al publicar"));
+  }
+}
+
+/* ═══════════════════════════════════════════════════
+   INICIO
+   ═══════════════════════════════════════════════════ */
+initData();
+</script>
+</body>
+</html>
